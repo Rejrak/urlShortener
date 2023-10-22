@@ -13,6 +13,7 @@ Implemented a Docker Compose file within the project, ensuring seamless startup.
 You can do whatever you want with this project
 
 ## License
+Copyright 2023 Rejrak
 This project is under the MIT License (MIT)
 
 
