@@ -1,0 +1,95 @@
+basePath: /api/v1
+definitions:
+  models.Request:
+    properties:
+      customShort:
+        type: string
+      expiry:
+        $ref: '#/definitions/time.Duration'
+      url:
+        type: string
+    type: object
+  models.Response:
+    properties:
+      customShort:
+        type: string
+      expiry:
+        $ref: '#/definitions/time.Duration'
+      rateLimitReset:
+        $ref: '#/definitions/time.Duration'
+      rateRemaining:
+        type: integer
+      url:
+        type: string
+    type: object
+  time.Duration:
+    enum:
+    - 1
+    - 1000
+    - 1000000
+    - 1000000000
+    type: integer
+    x-enum-varnames:
+    - Nanosecond
+    - Microsecond
+    - Millisecond
+    - Second
+host: localhost:3000
+info:
+  contact: {}
+  description: Just a Cherry.
+  license:
+    name: Apache 2.0
+    url: http://www.apache.org/licenses/LICENSE-2.0.html
+  termsOfService: http://swagger.io/terms/
+  title: SnM GO UrlShortener
+  version: "1.0"
+paths:
+  /:
+    post:
+      consumes:
+      - application/json
+      description: Restituisce un url accorciato
+      parameters:
+      - description: ' '
+        in: body
+        name: request
+        schema:
+          $ref: '#/definitions/models.Request'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.Response'
+        "400":
+          description: Errore nella richiesta
+          schema:
+            type: string
+        "500":
+          description: Errore interno del server
+          schema:
+            type: string
+      summary: UrlShortener
+      tags:
+      - SNM
+  /health-check:
+    get:
+      consumes:
+      - '*/*'
+      description: get the status of server.
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            additionalProperties: true
+            type: object
+      summary: Show the status of server.
+      tags:
+      - root
+schemes:
+- http
+swagger: "2.0"
