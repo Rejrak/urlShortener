@@ -2,8 +2,6 @@
 
 Created a fundamental URL shortener project incorporating a Redis database to handle requests and enable redirects for newly generated URLs. Implemented measures to prevent user abuse by restricting the number of incoming requests
 
-## Table of Contents
-## Table of Contents
 - [Usage](#usage)
 - [Contributing](#contributing)
 - [License](#license)
