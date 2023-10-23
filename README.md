@@ -7,7 +7,7 @@ Created a fundamental URL shortener project incorporating a Redis database to ha
 - [License](#license)
 
 ## Usage
-Implemented a Docker Compose file within the project, ensuring seamless startup. Additionally, included a .env file to simplify configuration processes.
+Implemented a Docker Compose file within the project, ensuring seamless startup
 
 ## Contributing 
 You can do whatever you want with this project
